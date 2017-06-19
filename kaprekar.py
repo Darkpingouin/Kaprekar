@@ -11,10 +11,19 @@ def Kaprecar(nb):
         return True
     return False
 
-p = int(raw_input())
-q = int(raw_input())
+
+if len(sys.argv) == 3:
+    start = int(sys.argv[1])
+    end = int(sys.argv[2])
+elif len(sys.argv) == 1:
+    start = 1
+    end = 100
+else:
+    print "Usage ./kaprecar.py [start end]"
+    exit(0)
+
 total = 0;
-for number in range(p, q+1):
+for number in range(start, end+1):
     if Kaprecar(number):
         print number,
         total = 1
